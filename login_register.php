@@ -14,15 +14,15 @@ if(isset($_POST['login']))
     {
             if(mysqli_num_rows($result)==1)
             {
-                $result_fetch=mysqli_fetch_assoc($result); # fetch all data in associative array
+                $result_fetch=mysqli_fetch_assoc($result); 
                 if(password_verify($_POST['password'],$result_fetch['password']))
                 {
-                   # chek database hash password and user password
+                   
                         $_SESSION['logged_in']=true;
                         $_SESSION['username']=$result_fetch['username'];
                         header("location: index.php");
 
-                //    echo "right";
+               
                 }
                 else{
                     echo" 
@@ -63,7 +63,7 @@ if(isset($_POST['login']))
 
 
 # for registration
-if (isset($_POST['register'])) // runs when reg button clicked
+if (isset($_POST['register']))
 {
     $user_exist="SELECT * FROM `user_registration` where `username`='$_POST[username]' or `email`='$_POST[email]'";
     $result=mysqli_query($con,$user_exist);
@@ -92,7 +92,7 @@ if (isset($_POST['register'])) // runs when reg button clicked
             }
 
         }
-        else # it will be executed if no one has taken username or email before
+        else 
         {
             $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
 
@@ -100,7 +100,7 @@ if (isset($_POST['register'])) // runs when reg button clicked
 
             if(mysqli_query($con,$query))
             {
-                // if data inserted successfully
+                
 
                 echo" 
                 <script>

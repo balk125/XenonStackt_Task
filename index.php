@@ -90,7 +90,7 @@ session_start();
 
 
 
-<!-- //creating contact popup -->
+
 
 
 
@@ -125,18 +125,6 @@ session_start();
           <label for="subject">Subject</label>
           <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
           <button type="submit" class="contact-btn" name="submit">Submit</button>
-
-
-
-
-
-
-
-
-
-
-
-
        
       </form>
     </div>
